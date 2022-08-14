@@ -9,7 +9,6 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *current, *temp;
 
-	/* If list pointer is NULL */
 	if (!list)
 		return;
 
@@ -42,10 +41,9 @@ void insertion_sort_list(listint_t **list)
 		if (current->next)
 			current->next->prev = current;
 
-		/* Print list after swap */
 		print_list(*list);
 
-		/* Check if prior node is less than swapped node */
+		/* Repeat, incase prior node is less than swapped node */
 		if (current->prev->prev)
 			current = current->prev->prev;
 	}
