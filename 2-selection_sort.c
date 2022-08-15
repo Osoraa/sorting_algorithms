@@ -16,8 +16,10 @@ void selection_sort(int *array, size_t size)
 
 	while (count++ < size)
 	{
+		/* Get first node */
 		least = current[0];
 
+		/* Find least node */
 		for (i = 1; i < _size; i++)
 		{
 			if (least > current[i])
@@ -27,6 +29,7 @@ void selection_sort(int *array, size_t size)
 			}
 		}
 
+		/* Swap nodes if the least is not current node */
 		if (least != current[0])
 		{
 			temp = current[0];
@@ -36,6 +39,7 @@ void selection_sort(int *array, size_t size)
 			print_array(array, size);
 		}
 
+		/* Move to the next node */
 		current++;
 		_size--;
 	}
