@@ -27,17 +27,15 @@ void selection_sort(int *array, size_t size)
 			}
 		}
 
-		if (least == current[0])
+		if (least != current[0])
 		{
-			current++;
-			continue;
+			temp = current[0];
+			current[0] = least;
+			current[index] = temp;
+
+			print_array(array, size);
 		}
-
-		temp = current[0];
-		current[0] = least;
-		current[index] = temp;
-
-		print_array(array, size);
+		
 		current++;
 		_size--;
 	}
